@@ -20,6 +20,11 @@ module.exports = (server) => {
       handler: gameController.addGame,
     },
     {
+      method: "PUT",
+      path: "/games/{id}",
+      handler: gameController.updateGame,
+    },
+    {
       method: "DELETE",
       path: "/games/{id}",
       handler: gameController.deleteGame,
