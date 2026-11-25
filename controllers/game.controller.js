@@ -25,3 +25,13 @@ exports.addGame = async (request, h) => {
     return h.response("There was an error: " + error).code(500);
   }
 };
+
+exports.deleteGame = async (request, h) => {
+  try {
+    const gameId = request.params.id;
+    await Game.findByIdAndDelete(gameId);
+    return await Game.find();
+  } catch (error) {
+    return h.resonse("There was an error: " + error).code(500);
+  }
+};
