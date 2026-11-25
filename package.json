@@ -1,0 +1,20 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.4.13",
+    "dotenv": "^18.0.10",
+    "mongoose": "^9.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
