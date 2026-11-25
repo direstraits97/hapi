@@ -19,31 +19,7 @@ const init = async () => {
       console.error("Error connecting to database: " + error);
     });
 
-  server.route([
-    {
-      method: "GET",
-      path: "/games",
-      handler: async (request, h) => {
-        try {
-          return await Game.find();
-        } catch (error) {
-          return h.response("There was an error: " + error).code(500);
-        }
-      },
-    },
-    {
-      method: "POST",
-      path: "/games",
-      handler: async (request, h) => {
-        try {
-          const game = new Game(request.payload);
-          return await game.save();
-        } catch (error) {
-          return h.response("There was an error: " + error).code(500);
-        }
-      },
-    },
-  ]);
+  require("./routes/game.route")(server);
 
   await server.start();
   console.log("Server running on %s", server.info.uri);
