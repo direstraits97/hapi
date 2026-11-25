@@ -10,6 +10,11 @@ module.exports = (server) => {
       handler: gameController.getAllGames,
     },
     {
+      method: "GET",
+      path: "/games/{id}",
+      handler: gameController.getGame,
+    },
+    {
       method: "POST",
       path: "/games",
       handler: gameController.addGame,

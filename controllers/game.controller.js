@@ -8,6 +8,15 @@ exports.getAllGames = async (request, h) => {
   }
 };
 
+exports.getGame = async (request, h) => {
+  try {
+    const gameId = request.params.id;
+    return await Game.findById(gameId);
+  } catch (error) {
+    return h.response("There was an error: " + error).code(500);
+  }
+};
+
 exports.addGame = async (request, h) => {
   try {
     const game = new Game(request.payload);
