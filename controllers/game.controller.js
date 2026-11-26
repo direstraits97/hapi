@@ -1,3 +1,9 @@
+/* Denna fil är strukturerad i olika funktioner för att anropa modellen och samlingen som skapas i game.model.js.
+Det är möjligt att hämta all data, hämta data baserat på id och antingen radera eller ändra data baserat på id.
+Modellen anropas med hjälpa av inbyggda kommandon från mongoose/MongoDb, som t.ex. find(), som hämtar allt data i samlingen.
+De funktioner som kräver id efterfrågar först data i adressraden för att sedan utföra metoden på det specifika objektet.
+Av: Josefine Backlund */
+
 const Game = require("../models/game.model");
 
 exports.getAllGames = async (request, h) => {

@@ -1,4 +1,6 @@
-const Game = require("../models/game.model");
+/* Denna fil anger vilken väg som krävs för att nå olika ändpunkter i API:et, vilken metod som kan köras där,
+ och vilken funktion som ska användas från game.controller.js. 
+ Av: Josefine Backlund */
 
 gameController = require("../controllers/game.controller");
 
